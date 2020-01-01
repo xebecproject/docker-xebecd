@@ -23,7 +23,7 @@ fi
 
 free -m
 
-if [ "$distro" = "trusty" -o "$distro" = "ubuntu:14.04" ]; then
+if [ "$distro" = "bionic" -o "$distro" = "ubuntu:18.04" ]; then
     curl https://get.docker.io/gpg | apt-key add -
     echo deb http://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list
 
