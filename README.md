@@ -22,7 +22,7 @@ Recommended and tested on Vultr 1024 MB RAM/320 GB disk instance @ $8/mo.  Vultr
 Really Fast Quick Start
 -----------------------
 
-One liner for Ubuntu 14.04 LTS machines with JSON-RPC enabled on localhost and adds upstart init script:
+One liner for Ubuntu 18.04 LTS machines with JSON-RPC enabled on localhost and adds upstart init script:
 
     curl https://raw.githubusercontent.com/xebecproject/docker-xebecd/master/bootstrap-host.sh | sh -s trusty
 
