@@ -12,7 +12,7 @@ Docker image that runs the Xebec xebecd node in a container for easy deployment.
 Requirements
 ------------
 
-* Physical machine, cloud instance, or VPS that supports Docker (i.e. Vultr, Digital Ocean, KVM or XEN based VMs) running Ubuntu 14.04 or later (*not OpenVZ containers!*)
+* Physical machine, cloud instance, or VPS that supports Docker (i.e. Vultr, Digital Ocean, KVM or XEN based VMs) running Ubuntu 18.04 or later (*not OpenVZ containers!*)
 * At least 4 GB to store the block chain files
 * At least 1 GB RAM + 2 GB swap file
 
