@@ -2,11 +2,11 @@
 set -e
 
 testAlias+=(
-	[dashd:trusty]='dashd'
+	[xebecd:trusty]='xebecd'
 )
 
 imageTests+=(
-	[dashd]='
+	[xebecd]='
 		rpcpassword
 	'
 )

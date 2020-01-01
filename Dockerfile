@@ -1,23 +1,23 @@
 FROM phusion/baseimage
-MAINTAINER Holger Schinzel <holger@dash.org>
+MAINTAINER xebec <xebecproject@xebec.site>
 
 ARG USER_ID
 ARG GROUP_ID
 
-ENV HOME /dash
+ENV HOME /xebec
 
 # add user with specified (or default) user/group ids
 ENV USER_ID ${USER_ID:-1000}
 ENV GROUP_ID ${GROUP_ID:-1000}
-RUN groupadd -g ${GROUP_ID} dash
-RUN useradd -u ${USER_ID} -g dash -s /bin/bash -m -d /dash dash
+RUN groupadd -g ${GROUP_ID} xebec
+RUN useradd -u ${USER_ID} -g xebec -s /bin/bash -m -d /xebec xebec
 
-RUN chown dash:dash -R /dash
+RUN chown xebec:xebec -R /xebec
 
-ADD https://github.com/dashpay/dash/releases/download/v0.14.0.5/dashcore-0.14.0.5-x86_64-linux-gnu.tar.gz /tmp/
-RUN tar -xvf /tmp/dashcore-*.tar.gz -C /tmp/
-RUN cp /tmp/dashcore*/bin/*  /usr/local/bin
-RUN rm -rf /tmp/dashcore*
+ADD https://github.com/xebecproject/xebec/releases/download/v0.14.0.5-x/xebec-0.14.5-ubuntu18.tar.gz /tmp/
+RUN tar -xvf /tmp/xebec-*.tar.gz -C /tmp/
+RUN cp /tmp/xebec*/bin/*  /usr/local/bin
+RUN rm -rf /tmp/xebec*
 
 ADD ./bin /usr/local/bin
 RUN chmod a+x /usr/local/bin/*
@@ -26,12 +26,12 @@ RUN chmod a+x /usr/local/bin/*
 # denied issues when executing /bin/bash from trusted builds.  Building locally
 # works fine (strange).  Using the upstream docker (0.11.1) pkg from
 # http://get.docker.io/ubuntu works fine also and seems simpler.
-USER dash
+USER xebec
 
-VOLUME ["/dash"]
+VOLUME ["/xebec"]
 
-EXPOSE 9998 9999 19998 19999
+EXPOSE 28280 27270 27271 27271
 
-WORKDIR /dash
+WORKDIR /xebec
 
-CMD ["dash_oneshot"]
+CMD ["xebec_oneshot"]
