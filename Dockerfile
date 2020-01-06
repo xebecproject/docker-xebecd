@@ -14,7 +14,7 @@ RUN useradd -u ${USER_ID} -g xebec -s /bin/bash -m -d /xebec xebec
 
 RUN chown xebec:xebec -R /xebec
 
-ADD https://github.com/xebecproject/xebec/releases/download/v0.14.0.5-x/xebec-0.14.5-ubuntu18.tar.gz /tmp/
+ADD https://github.com/xebecproject/xebec/releases/download/v0.14.0.6/xebec-0.14.0.6-x86_64-linux-gnu.tar.gz  /tmp/
 RUN tar -xvf /tmp/xebec-*.tar.gz -C /tmp/
 RUN cp /tmp/xebec*/bin/*  /usr/local/bin
 RUN rm -rf /tmp/xebec*
